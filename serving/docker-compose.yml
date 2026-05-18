@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  tfserving:
+    image: tensorflow/serving:latest
+    ports:
+      - "8501:8501"
+    volumes:
+      - ../exported_model:/models/sms_model
+    environment:
+      - MODEL_NAME=sms_model
